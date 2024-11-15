@@ -1,0 +1,209 @@
+<!DOCTYPE html> 
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Strona</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="home">
+        <div class="content">
+            <header>
+                <h1>Diagnostyka Komputera</h1>
+            </header>
+
+            <main>
+                <section id="home-section">
+                    <h1>Kody błędów uruchamiania komputera</h1>
+                    <h2>System BIOS – Charakterystyka</h2>
+                    <p>
+                        BIOS (Basic Input/Output System) jest podstawowym systemem, który odpowiada za uruchamianie komputera, testowanie sprzętu oraz przygotowanie systemu do załadowania systemu operacyjnego. W nowszych komputerach zastępowany jest przez UEFI (Unified Extensible Firmware Interface), który oferuje bardziej zaawansowane funkcje oraz większe bezpieczeństwo.
+                    </p>
+                    <h2>POST (Power-On Self Test)</h2>
+                    <p>
+                        POST to procedura uruchamiana podczas włączania komputera, która sprawdza poprawność działania głównych komponentów sprzętowych, takich jak pamięć RAM, procesor, karta graficzna oraz urządzenia wejścia/wyjścia. Jeśli POST wykryje problem, BIOS może sygnalizować błędy za pomocą kodów dźwiękowych lub wyświetlić komunikat na ekranie.
+                    </p>
+
+                    <div class="accordion-btn" onclick="toggleText('errorCodes')">
+                        <h2>Punkty kontrolne – kody błędów</h2>
+                        <span class="accordion-icon">▶</span>
+                    </div>
+                    <div id="errorCodes" class="accordion-content">
+                        <ul>
+                            <li><strong>00</strong> – Procesor nie został wykryty.</li>
+                            <li><strong>55</strong> – Problem z pamięcią RAM.</li>
+                            <li><strong>D0</strong> – Problem z uruchomieniem BIOS-u.</li>
+                        </ul>
+                    </div>
+
+                    <div class="accordion-btn" onclick="toggleText('screenMessages')">
+                        <h2>Komunikaty na ekranie komputera</h2>
+                        <span class="accordion-icon">▶</span>
+                    </div>
+                    <div id="screenMessages" class="accordion-content">
+                        <ul>
+                            <li><strong>"No Boot Device Found"</strong> – brak dysku z systemem operacyjnym.</li>
+                            <li><strong>"CMOS Checksum Error"</strong> – błąd pamięci CMOS, konieczne jest zresetowanie BIOS-u.</li>
+                            <li><strong>"Keyboard Not Found"</strong> – klawiatura nie została podłączona.</li>
+                            <li><strong>"Hard Drive Not Detected"</strong> – nie wykryto dysku twardego.</li>
+                            <li><strong>"Overclocking Failed"</strong> – problem ze stabilnością ustawień podkręcenia procesora.</li>
+                            <li><strong>"Memory Test Failed"</strong> – błąd pamięci RAM.</li>
+                            <li><strong>"Fan Error"</strong> – problem z działaniem wentylatora CPU lub GPU.</li>
+                            <li><strong>"BIOS Update Failed"</strong> – przerwana lub uszkodzona aktualizacja BIOS-u.</li>
+                            <li><strong>"CPU Over Temperature"</strong> – przegrzewanie procesora.</li>
+                            <li><strong>"Press F1 to Continue"</strong> – wymagana ingerencja użytkownika (np. ustawienia BIOS).</li>
+                            <li><strong>"Disk Boot Failure"</strong> – błąd podczas ładowania systemu z dysku.</li>
+                            <li><strong>"SMART Hard Drive Error"</strong> – ostrzeżenie o uszkodzeniu dysku (dane SMART).</li>
+                            <li><strong>"PXE Boot ROM Error"</strong> – błąd przy próbie bootowania przez sieć.</li>
+                            <li><strong>"BIOS Time and Date Not Set"</strong> – zegar systemowy nie jest ustawiony (wyczerpana bateria CMOS).</li>
+                            <li><strong>"USB Over Current Detected"</strong> – zbyt duże obciążenie portu USB.</li>
+                            <li><strong>"VGA Not Detected"</strong> – brak sygnału z karty graficznej.</li>
+                            <li><strong>"System Halted"</strong> – krytyczny błąd, system nie może kontynuować.</li>
+                            <li><strong>"Invalid Partition Table"</strong> – problem z tablicą partycji dysku.</li>
+                            <li><strong>"Secure Boot Violation"</strong> – wykryto nieautoryzowane oprogramowanie.</li>
+                            <li><strong>"Error Loading Operating System"</strong> – problem z plikami systemowymi na dysku.</li>
+                        </ul>
+                    </div>
+
+                    <div class="accordion-btn" onclick="toggleText('passwordIssues')">
+                        <h2>Jak rozwiązać problemy z hasłem BIOS</h2>
+                        <span class="accordion-icon">▶</span>
+                    </div>
+                    <div id="passwordIssues" class="accordion-content">
+                        <ul>
+                            <li><strong>1.</strong> Zresetuj ustawienia BIOS poprzez wyjęcie baterii CMOS na kilka minut.</li>
+                            <li><strong>2.</strong> Użyj specjalnych kodów awaryjnych generowanych przez producenta BIOS-u.</li>
+                            <li><strong>3.</strong> Skontaktuj się z serwisem technicznym producenta sprzętu.</li>
+                        </ul>
+                    </div>
+
+                    <div class="accordion-btn" onclick="toggleText('amiBios')">
+                        <h2>AMI BIOS</h2>
+                        <span class="accordion-icon">▶</span>
+                    </div>
+                    <div id="amiBios" class="accordion-content">
+                        <ul>
+                            <li> 1 długi, 2 krótkie – Błąd karty graficznej.</li>
+                            <li> 1 długi, 3 krótkie – Błąd pamięci RAM.</li>
+                            <li> 1 długi, 1 krótki – Błąd płyty głównej.</li>
+                            <li> Bez sygnału – Brak problemów, komputer uruchamia się normalnie.</li>
+                        </ul>
+                    </div>
+
+                    <div class="accordion-btn" onclick="toggleText('awardBios')">
+                        <h2>AWARD BIOS</h2>
+                        <span class="accordion-icon">▶</span>
+                    </div>
+                    <div id="awardBios" class="accordion-content">
+                        <ul>
+                            <li> 1 długi, 2 krótkie – Błąd karty graficznej.</li>
+                            <li> 1 długi, 1 krótki – Błąd pamięci RAM.</li>
+                            <li> 2 długie – Błąd płyty głównej.</li>
+                            <li> 3 krótkie – Błąd klawiatury.</li>
+                        </ul>
+                    </div>
+
+                    <div class="accordion-btn" onclick="toggleText('uefiBios')">
+                        <h2>UEFI BIOS</h2>
+                        <span class="accordion-icon">▶</span>
+                    </div>
+                    <div id="uefiBios" class="accordion-content">
+                        <p>
+                            <strong>UEFI BIOS oferuje graficzny interfejs oraz wsparcie dla zaawansowanych funkcji bezpieczeństwa, takich jak Secure Boot.</strong>
+                        </p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <div class="container" id="hardware-testing">
+        <div class="content">
+            <section id="hardware-testing">
+                <h1>Narzędzia Testujące Sprzęt Komputera</h1>
+                <div class="test-tool">
+                    <h2>1. CPU – Prime95</h2>
+                    <p>
+                        Prime95 to program przeznaczony do testowania stabilności i wydajności procesora poprzez intensywne obciążenie za pomocą obliczeń liczb pierwszych. Jego główną funkcją jest "Torture Test", który pozwala sprawdzić stabilność CPU w ekstremalnych warunkach, wykrywając problemy z przegrzewaniem lub błędami obliczeniowymi. Jest szczególnie przydatny dla overclockerów oraz diagnostów w celu sprawdzenia, czy procesor działa poprawnie pod dużym obciążeniem.
+                    </p>
+                </div>
+                <div class="test-tool">
+                    <h2>2. Pamięć (RAM, ROM, CACHE) – MemTest86</h2>
+                    <p>
+                        MemTest86 to narzędzie do testowania pamięci RAM pod kątem błędów, działające w środowisku przed załadowaniem systemu operacyjnego. Wykonuje różne testy, takie jak odczyt, zapis i porównywanie danych w modułach RAM, co pozwala na wykrycie uszkodzeń pamięci. MemTest86 jest jednym z najbardziej popularnych narzędzi używanych przez profesjonalistów w diagnostyce komputerowej, aby upewnić się, że pamięć nie powoduje problemów z systemem.
+                    </p>
+                </div>
+                <div class="test-tool">
+                    <h2>3. HDD – CrystalDiskInfo</h2>
+                    <p>
+                        CrystalDiskInfo to program monitorujący stan zdrowia dysków twardych oraz SSD poprzez odczytywanie danych SMART (np. temperatura, liczba błędów, zużycie). Narzędzie to pozwala użytkownikom śledzić parametry dysków twardych i SSD, ostrzegając o potencjalnych awariach. Dzięki temu użytkownicy mogą podejmować odpowiednie kroki w celu zabezpieczenia danych przed utratą.
+                    </p>
+                </div>
+                <div class="test-tool">
+                    <h2>4. GPU – FurMark</h2>
+                    <p>
+                        FurMark to narzędzie do testowania stabilności i wydajności kart graficznych. Tworzy intensywne obciążenie GPU, generując grafikę w postaci "futrzanego" obiektu, aby sprawdzić, jak karta radzi sobie w skrajnych warunkach. FurMark jest często używany przez entuzjastów komputerowych i profesjonalistów do testowania i monitorowania temperatury oraz stabilności kart graficznych w stresujących sytuacjach.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="container" id="data-recovery">
+        <div class="content">
+            <header>
+                <h1>Utracone Dane (Przypadki Utraty Danych)</h1>
+            </header>
+            <main>
+                <section id="data-loss">
+                    <h2>Utrata danych może wystąpić z różnych powodów, w tym awarii sprzętu, błędów użytkownika, infekcji złośliwym oprogramowaniem czy problemów z systemem plików.</h2>
+                        <li><strong>Usunięcie plików:</strong> przypadkowe usunięcie danych z dysku twardego, dysku zewnętrznego lub pamięci przenośnej.</li>
+                        <li><strong>Uszkodzenie systemu plików:</strong> gdy system plików nie jest w stanie poprawnie odczytać danych, często z powodu awarii systemu operacyjnego.</li>
+                        <li><strong>Uszkodzenia fizyczne nośnika:</strong> mechaniczne uszkodzenia, które uniemożliwiają dostęp do danych.</li>
+                        <li><strong>Korupcja danych:</strong> awarie sprzętu, błędy w oprogramowaniu lub uszkodzenia wynikające z nagłego odcięcia zasilania.</li>
+                    </ul>  
+                    <h2>Uszkodzenia mechaniczne</h2>  
+                    <ul>
+                        <li><strong>Napęd optyczny:</strong> Uszkodzenia płyt CD, DVD lub Blu-ray mogą wystąpić w wyniku zarysowań, pęknięć lub awarii lasera. Dane na takich nośnikach mogą być częściowo lub całkowicie nieodczytywalne.</li>
+                        <li><strong>Dysk twardy:</strong> Uszkodzenia mechaniczne w dyskach twardych (HDD) mogą obejmować awarie głowicy, uszkodzenia talerzy lub elektroniki. Nawet jeśli system wykrywa dysk, dane mogą być niedostępne, wymagając specjalistycznego oprogramowania do odzyskiwania.</li>
+                        <li><strong>Karty SD i pamięci Flash:</strong> W przypadku uszkodzeń takich nośników (np. w wyniku fizycznego uszkodzenia, wyładowania elektrostatycznego lub złamania obudowy), dostęp do danych może być niemożliwy. Wiele pamięci flash i kart SD ma też ograniczoną liczbę cykli zapisu, co może prowadzić do awarii.</li>
+                    </ul>       
+                    <h2>Problemy z partycjami</h2>        
+                    <ul>
+                        <li><strong>Uszkodzenie systemu plików:</strong> Może nastąpić w wyniku nieprawidłowego wyłączenia komputera, błędów w systemie operacyjnym lub uszkodzeń sprzętu. W efekcie system plików może stać się niestabilny lub całkowicie nieczytelny.</li>
+                        <li><strong>Usunięte lub sformatowane partycje:</strong> Jeśli partycja zostanie przypadkowo usunięta lub sformatowana, dane na niej zapisane mogą stać się niedostępne. Można je odzyskać, jeśli nie zostały nadpisane.</li>
+                        <li><strong>Defragmentacja dysku:</strong> W wyniku defragmentacji danych może dojść do ich usunięcia lub uszkodzenia, zwłaszcza jeśli proces defragmentacji zostanie przerwany.</li>
+                        <li><strong>Narzędzia systemu plików:</strong> Błędne operacje przy używaniu narzędzi takich jak chkdsk, fsck czy inne programy do naprawy systemu plików mogą spowodować utratę danych.</li>
+                    </ul>                   
+                    <h2>Programy do odzyskiwania danych</h2>
+                    <ul>
+                        <li><strong>Recuva:</strong> Darmowe narzędzie do odzyskiwania usuniętych plików z różnych nośników, w tym dysków twardych i kart SD. Oferuje łatwe odzyskiwanie plików po usunięciu lub sformatowaniu partycji.</li>
+                        <li><strong>EaseUS Data Recovery Wizard:</strong> Profesjonalne narzędzie do odzyskiwania danych z różnych urządzeń, wspierające różne systemy plików i umożliwiające odzyskiwanie z usuniętych partycji.</li>
+                        <li><strong>TestDisk:</strong> Open-source'owe narzędzie do odzyskiwania danych z uszkodzonych partycji i naprawy systemów plików. Obsługuje wiele typów systemów plików, takich jak FAT, NTFS, ext3/ext4.</li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </div>
+
+
+    <div class="fixed-nav">
+        <a href="#home">Diagnostyka Komputera</a>
+        <a href="#hardware-testing">Narzędzia Testujące</a>
+        <a href="#data-recovery">Utracone Dane</a>
+        <div class="accordion-btn" onclick="toggleText('sources')">
+            <span>Źródła</span>
+            <span class="accordion-icon">▶</span>
+        </div>
+        <div id="sources" class="accordion-content">
+            <ul>
+                <li>Chat-GPT</li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
